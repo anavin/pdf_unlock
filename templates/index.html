@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Password Remover</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔓</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔓 PDF Password Remover</h1>
+            <p class="subtitle">ลบ password ออกจาก PDF ของคุณ ฟรี ปลอดภัย รวดเร็ว</p>
+        </header>
+
+        <main>
+            <form id="uploadForm" class="upload-form">
+                <!-- File Drop Zone -->
+                <div class="drop-zone" id="dropZone">
+                    <input type="file" id="fileInput" name="files" multiple accept=".pdf,application/pdf" hidden>
+                    <div class="drop-zone-content">
+                        <div class="drop-icon">📄</div>
+                        <p class="drop-text">ลากไฟล์ PDF มาที่นี่ หรือ <span class="link">คลิกเพื่อเลือกไฟล์</span></p>
+                        <p class="drop-hint">รองรับหลายไฟล์ • สูงสุด 50 ไฟล์ • ไม่เกิน 50 MB ต่อไฟล์</p>
+                    </div>
+                </div>
+
+                <!-- File List -->
+                <div class="file-list" id="fileList"></div>
+
+                <!-- Password Input -->
+                <div class="password-section">
+                    <label for="passwordInput">🔑 Password</label>
+                    <div class="password-input-wrapper">
+                        <input
+                            type="password"
+                            id="passwordInput"
+                            name="passwords"
+                            placeholder="ระบุ password (คั่นด้วย comma หากมีหลายตัว)"
+                            required
+                        >
+                        <button type="button" class="toggle-password" id="togglePassword" aria-label="แสดง/ซ่อน password">
+                            <span id="toggleIcon">👁️</span>
+                        </button>
+                    </div>
+                    <p class="hint">💡 หากไม่แน่ใจว่า password ตัวไหน ใส่หลายตัวคั่นด้วย comma เช่น <code>pass1,pass2,pass3</code></p>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                    <span class="btn-text">🔓 ลบ Password</span>
+                    <span class="btn-loading" hidden>
+                        <span class="spinner"></span>
+                        กำลังประมวลผล...
+                    </span>
+                </button>
+            </form>
+
+            <!-- Result Section -->
+            <div class="result-section" id="resultSection" hidden>
+                <div class="result-card" id="resultCard"></div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="privacy-note">
+                <strong>🔒 ความเป็นส่วนตัว:</strong> ไฟล์ของคุณจะถูกประมวลผลในหน่วยความจำเท่านั้น ไม่มีการบันทึกลงเซิร์ฟเวอร์
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
