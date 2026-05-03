@@ -1,0 +1,16 @@
+# Render Blueprint - Auto deploy เมื่อ push ไป GitHub
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: pdf-unlock
+    runtime: python
+    plan: free
+    region: singapore  # ใกล้ไทยที่สุด (ใช้ oregon, frankfurt, ohio ได้เช่นกัน)
+    branch: master
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers 2
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
