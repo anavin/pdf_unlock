@@ -24,7 +24,7 @@ MAX_FILES = 50
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 app = FastAPI(
-    title="PDF Password Remover",
+    title="Lab Parfumo PDF Password Remover",
     description="ลบ password ออกจาก PDF หลายไฟล์พร้อมกันผ่านเว็บ",
     version="1.0.0",
 )

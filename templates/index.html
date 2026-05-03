@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Password Remover</title>
+    <title>Lab Parfumo PDF Password Remover</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔓</text></svg>">
 </head>
 <body>
     <div class="container">
         <header>
+            <div class="brand">Lab Parfumo</div>
             <h1>🔓 PDF Password Remover</h1>
-            <p class="subtitle">ลบ password ออกจาก PDF ของคุณ ฟรี ปลอดภัย รวดเร็ว</p>
+            <p class="subtitle">ลบ password ออกจาก PDF</p>
         </header>
 
         <main>
@@ -32,18 +33,15 @@
                 <!-- Password Input -->
                 <div class="password-section">
                     <label for="passwordInput">🔑 Password</label>
-                    <div class="password-input-wrapper">
-                        <input
-                            type="password"
-                            id="passwordInput"
-                            name="passwords"
-                            placeholder="ระบุ password (คั่นด้วย comma หากมีหลายตัว)"
-                            required
-                        >
-                        <button type="button" class="toggle-password" id="togglePassword" aria-label="แสดง/ซ่อน password">
-                            <span id="toggleIcon">👁️</span>
-                        </button>
-                    </div>
+                    <input
+                        type="text"
+                        id="passwordInput"
+                        name="passwords"
+                        placeholder="ระบุ password (คั่นด้วย comma หากมีหลายตัว)"
+                        autocomplete="off"
+                        spellcheck="false"
+                        required
+                    >
                     <p class="hint">💡 หากไม่แน่ใจว่า password ตัวไหน ใส่หลายตัวคั่นด้วย comma เช่น <code>pass1,pass2,pass3</code></p>
                 </div>
 

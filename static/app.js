@@ -4,8 +4,6 @@ const dropZone = document.getElementById('dropZone');
 const fileInput = document.getElementById('fileInput');
 const fileList = document.getElementById('fileList');
 const passwordInput = document.getElementById('passwordInput');
-const togglePassword = document.getElementById('togglePassword');
-const toggleIcon = document.getElementById('toggleIcon');
 const submitBtn = document.getElementById('submitBtn');
 const btnText = submitBtn.querySelector('.btn-text');
 const btnLoading = submitBtn.querySelector('.btn-loading');
@@ -101,13 +99,6 @@ function updateSubmitButton() {
 }
 
 passwordInput.addEventListener('input', updateSubmitButton);
-
-// ==== Toggle Password Visibility ====
-togglePassword.addEventListener('click', () => {
-    const isPassword = passwordInput.type === 'password';
-    passwordInput.type = isPassword ? 'text' : 'password';
-    toggleIcon.textContent = isPassword ? '🙈' : '👁️';
-});
 
 // ==== Form Submit ====
 form.addEventListener('submit', async (e) => {
